@@ -9,9 +9,9 @@
  <center>
   <h1>Gestion des Automates</h1>
         <h2>
-         <a href="automate/ajouter">Ajouter un nouvel automate</a>
+         <a href="ajouter">Ajouter un nouvel automate</a>
          &nbsp;&nbsp;&nbsp;
-         <a href="automate/liste">Liste de tous les automates</a>
+         <a href="liste">Liste de tous les automates</a>
          
         </h2>
  </center>

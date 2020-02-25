@@ -8,17 +8,20 @@
 </head>
 <body>
  <center>
-  <h1>Rapport des automates</h1>
+  <h1>Rapport automates</h1>
         <h2>
+         <h2>
          <a href="en_service">En service</a>
          <a href="hors_service">Hors service </a>
          <a href="a_reapprovisionner">A reapprovisionner </a>
          <a href="ventes">Ventes</a>
         </h2>
+         
+        </h2>
  </center>
     <div align="center">
         <table border="1" cellpadding="5" id="table_automate">
-            <caption><h2>Liste des automates en service: </h2></caption>
+            <caption><h2>Classement des automates par ordre de ventes : </h2></caption>
             <tr>
                 
                 <th>Automate Id</th>
@@ -36,5 +39,5 @@
     </div> 
 </body>
 </html>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/script_en_service.js"> </script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/script_ventes.js"> </script>
 

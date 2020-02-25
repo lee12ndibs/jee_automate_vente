@@ -8,7 +8,7 @@
 </head>
 <body>
  <center>
-  <h1>Rapport des automates</h1>
+  <h1>Rapport des automtes</h1>
         <h2>
          <a href="en_service">En service</a>
          <a href="hors_service">Hors service </a>
@@ -18,7 +18,7 @@
  </center>
     <div align="center">
         <table border="1" cellpadding="5" id="table_automate">
-            <caption><h2>Liste des automates en service: </h2></caption>
+            <caption><h2>Liste des automates a reapprovisionner : </h2></caption>
             <tr>
                 
                 <th>Automate Id</th>
@@ -36,5 +36,5 @@
     </div> 
 </body>
 </html>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/script_en_service.js"> </script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/script_a_reapprovisionner.js"> </script>
 

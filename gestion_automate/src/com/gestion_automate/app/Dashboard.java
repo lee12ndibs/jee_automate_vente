@@ -34,23 +34,38 @@ public class Dashboard extends HttpServlet {
 		System.out.println(action);
 		switch (action) {
 			    case "/hors_service":
-			    		getDashboard_hors_service(request, response);
+			    		getDashboardHorsService(request, response);
 			        break;
 			    case "/en_service":
-		    			getDashboard_en_service(request, response);
+		    			getDashboardEnService(request, response);
 			    	break;
-//			    default:
-//			    		getDashboard_en_service(request, response);
-//			        break;
+			    case "/a_reapprovisionner":
+	    				getDashboardAReapprovisinner(request, response);
+	    			break;
+			    case "/ventes":
+    				getDashboardVentes(request, response);
+    			break;
+		    	
+			    default:
+			    		getDashboardEnService(request, response);
+			        break;
 			}
 	}
 
-	public void getDashboard_en_service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void getDashboardEnService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/en_service.jsp");
         dispatcher.forward(request, response);
 	}
-	public void getDashboard_hors_service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void getDashboardHorsService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/hors_service.jsp");
+        dispatcher.forward(request, response);
+	}
+	public void getDashboardAReapprovisinner(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/a_reapprovisionner.jsp");
+        dispatcher.forward(request, response);
+	}
+	public void getDashboardVentes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/ventes.jsp");
         dispatcher.forward(request, response);
 	}
 	/**
