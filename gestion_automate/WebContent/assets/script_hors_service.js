@@ -8,7 +8,7 @@ fetch('http://localhost:9090/ws_rapport/api/dashboard/all')
    tr = document.createElement("tr");
    let rapportIndexArray = new Array();
 
-      if (!rapportIndexArray.includes(data[index]['auto_id'])  && index == lastRapportId(data[index]['auto_id'], data) &&  (data[index]['statut_fonctionnement'].toLowerCase().localeCompare("Hors service") == 0)){
+      if (!rapportIndexArray.includes(data[index]['auto_id'])  && index == lastRapportId(data[index]['auto_id'], data) &&  (data[index]['statut_fonctionnement'].toLowerCase().localeCompare("hors service") == 0)){
          // tr.appendChild(document.createElement("td")).textContent = data[index]['id']
          tr.appendChild(document.createElement("td")).textContent = data[index]['auto_id']
          tr.appendChild(document.createElement("td")).textContent = data[index]['statut_fonctionnement']

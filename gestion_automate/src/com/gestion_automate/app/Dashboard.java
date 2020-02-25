@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Dashboard
  */
-@WebServlet("/dashboard")
+@WebServlet(urlPatterns = {"/dashboard/*"})
 public class Dashboard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,27 +30,27 @@ public class Dashboard extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action = request.getRequestURI();
+		String action = request.getPathInfo();
 		System.out.println(action);
 		switch (action) {
-			    case "hors_service":
+			    case "/hors_service":
 			    		getDashboard_hors_service(request, response);
 			        break;
-			    case "en_service":
+			    case "/en_service":
 		    			getDashboard_en_service(request, response);
 			    	break;
-			    default:
-			    		getDashboard_en_service(request, response);
-			        break;
+//			    default:
+//			    		getDashboard_en_service(request, response);
+//			        break;
 			}
 	}
 
 	public void getDashboard_en_service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("en_service.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/en_service.jsp");
         dispatcher.forward(request, response);
 	}
 	public void getDashboard_hors_service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("hors_service.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/hors_service.jsp");
         dispatcher.forward(request, response);
 	}
 	/**

@@ -10,10 +10,10 @@
  <center>
   <h1>Automate en services</h1>
         <h2>
-         <a href="dashboard/en_service">En service</a>
+         <a href="en_service">En service</a>
          
-         <a href="dashboard/hors_service">Hors service </a>
-         <a href="dashboard/ventes">Ventes</a>
+         <a href="hors_service">Hors service </a>
+         <a href="ventes">Ventes</a>
          
         </h2>
  </center>
