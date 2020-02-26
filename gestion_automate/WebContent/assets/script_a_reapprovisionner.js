@@ -28,6 +28,14 @@ fetch('http://localhost:9090/ws_rapport/api/dashboard/all')
             for (let j = 0; j < data[index]['articles'].length; j++) {
                articles.appendChild(document.createElement("li")).textContent = "nom : " + data[index]['articles'][j]['nom']+ "   -   " +  data[index]['articles'][j]['prix']+ " euros (" +data[index]['articles'][j]['quantite_restante'] + ")" 
             }
+            let commentaires = tr.appendChild(document.createElement("td"))
+            if(reapprovisionnerChaudTroisFoisPlus(data)){
+                commentaires.innerHTML += "Réapprovisionner Trois fois plus de boissons chaudes<br>"
+
+             }
+             if(reapprovisionnerFroidTroisFoisPlus(data)){
+             	commentaires.innerHTML += "Réapprovisionner Trois fois plus de boissons froides<br>"
+             }
             
             document.getElementById("table_automate").appendChild(tr);
             rapportIndexArray.push(data[index]['auto_id'])
@@ -58,5 +66,22 @@ function lastRapportId(id_auto,data){
       }
    }
    return max_id;
+}
+
+function reapprovisionnerChaudTroisFoisPlus(data){
+	for (let index = 0; index < data.length; index++) {
+		if((reapprovisionner(data[index]['articles']) == 1) && (data[index]['temperature'] < 5)){
+			return 1;
+		}
+   }
+   return 0;
+}
+function reapprovisionnerFroidTroisFoisPlus(data){
+	for (let index = 0; index < data.length; index++) {
+		if((reapprovisionner(data[index]['articles']) == 1) && (data[index]['temperature'] > 25)){
+			return 1;
+		}
+   }
+   return 0;
 }
 

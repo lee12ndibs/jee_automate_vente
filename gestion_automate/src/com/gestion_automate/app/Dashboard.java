@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Dashboard
  */
-@WebServlet(urlPatterns = {"/dashboard/*"})
+@WebServlet(urlPatterns = {"/dashboard/*"}, name="dashboard")
 public class Dashboard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,26 +30,33 @@ public class Dashboard extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action = request.getPathInfo();
-		System.out.println(action);
-		switch (action) {
-			    case "/hors_service":
-			    		getDashboardHorsService(request, response);
-			        break;
-			    case "/en_service":
-		    			getDashboardEnService(request, response);
-			    	break;
-			    case "/a_reapprovisionner":
-	    				getDashboardAReapprovisinner(request, response);
-	    			break;
-			    case "/ventes":
-    				getDashboardVentes(request, response);
-    			break;
-		    	
-			    default:
-			    		getDashboardEnService(request, response);
-			        break;
+	
+		String action =   request.getPathInfo();
+		System.out.println(request.getRequestURI());
+		if(action != null) {
+				switch (action) {
+				    case "/hors_service":
+				    		getDashboardHorsService(request, response);
+				        break;
+				    case "/en_service":
+			    			getDashboardEnService(request, response);
+				    	break;
+				    case "/a_reapprovisionner":
+		    				getDashboardAReapprovisinner(request, response);
+		    			break;
+				    case "/ventes":
+	    					getDashboardVentes(request, response);
+	    				break;
+			    	
+				    default:
+				    		getDashboardEnService(request, response);
+				        break;
 			}
+		}
+		else {
+			response.sendRedirect("dashboard/");
+	        
+		}
 	}
 
 	public void getDashboardEnService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

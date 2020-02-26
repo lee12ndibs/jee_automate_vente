@@ -19,14 +19,14 @@ import java.util.*;
 /**
  * Servlet implementation class App
  */
-@WebServlet("/automate")
-public class App extends HttpServlet {
+@WebServlet(urlPatterns="/automate/*", name="gestion_automate")
+public class GestionAutomate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public App() {
+    public GestionAutomate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,25 +36,30 @@ public class App extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action = request.getContextPath();
+		String action =   request.getPathInfo();
 
 	//remettre dans un bloc try
 		try {
-			
-	        switch (action) {
-			    case "/ajouter":
-	                    ajouterAutomate(request, response);
-			        break;
-			    case "/supprimer":
-	                    supprimerAutomate(request, response);
-			        break;
-			    case "/modifier":
-	                   modifierAutomate(request, response);
-			        break;
-			    default:
-			    		listeAutomate(request, response);
-			        break;
+			if(action != null) {
+				 switch (action) {
+				    case "/ajouter":
+		                    ajouterAutomate(request, response);
+				        break;
+				    case "/supprimer":
+		                    supprimerAutomate(request, response);
+				        break;
+				    case "/modifier":
+		                   modifierAutomate(request, response);
+				        break;
+				    default:
+				    		listeAutomate(request, response);
+				        break;
+				}
 			}
+			else {	 
+				response.sendRedirect("automate/");
+			}
+	       
 		} catch (SQLException ex) {
             throw new ServletException(ex);
         }
@@ -63,13 +68,13 @@ public class App extends HttpServlet {
 	private void listeAutomate(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         List < Automate > listeAutomate = AutomateDAO.getAllAutomate();
         request.setAttribute("listeAutomate", listeAutomate);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("liste_automate.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/liste_automate.jsp");
         dispatcher.forward(request, response);
     }
 
 	 private void ajouterAutomate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 if (request.getParameter("id") == null) {
-		 	RequestDispatcher dispatcher = request.getRequestDispatcher("ajouter_automate.jsp");
+		 	RequestDispatcher dispatcher = request.getRequestDispatcher("/ajouter_automate.jsp");
 		 	dispatcher.forward(request, response);
 		 }
 		 else {
@@ -101,8 +106,9 @@ public class App extends HttpServlet {
 			automate.setDate_intervention(automate.getDate_intervention());
 			automate.setCommentaire(automate.getCommentaire());
 		 	request.setAttribute("automate", automate);
-		 	RequestDispatcher dispatcher = request.getRequestDispatcher("ajouter_automate.jsp");
+		 	RequestDispatcher dispatcher = request.getRequestDispatcher("/ajouter_automate.jsp");
 		 	dispatcher.forward(request, response);
+		 	
 		 }
 		 else {
 			Automate automate = new Automate();

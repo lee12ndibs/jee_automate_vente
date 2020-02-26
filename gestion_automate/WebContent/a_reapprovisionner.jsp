@@ -30,6 +30,7 @@
                 <th>montant de vente</th>
                 <th>systeme de paiement</th>
                 <th>Articles </th>
+                <th>Commentaires </th>
             </tr>
             
         </table>

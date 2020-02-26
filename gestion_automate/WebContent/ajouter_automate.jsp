@@ -17,10 +17,10 @@
  </center>
     <div align="center">
   <c:if test="${automate != null}">
-   <form action="automate/modifier" method="post">
+   <form action="modifier" method="post">
         </c:if>
         <c:if test="${automate == null}">
-   <form action="automate/ajouter" method="post">
+   <form action="ajouter" method="post">
         </c:if>
         <table border="1" cellpadding="5">
             <caption>
