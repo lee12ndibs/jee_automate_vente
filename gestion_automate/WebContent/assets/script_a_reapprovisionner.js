@@ -50,7 +50,7 @@ fetch('http://localhost:9090/ws_rapport/api/dashboard/all')
 function reapprovisionner(articles){
    // console.log(articles[0])
    for (let index = 0; index < articles.length; index++) {
-      if (articles[index]['quantite_restante'] == 0)
+      if (articles[index]['quantite_restante'] <= 10)
       {
          return 1;
       }
