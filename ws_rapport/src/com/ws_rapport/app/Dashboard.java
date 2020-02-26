@@ -36,12 +36,6 @@ public class Dashboard {
 	    return Response.ok(rapport).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
-	@GET
-	@Path("/hors_service")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getHorsServiceAutomate() {
-		return Response.ok(AutomateDAO.getHorsServiceAutomate()).header("Access-Control-Allow-Origin", "*").build();
-	}
 	
 	@GET
 	@Path("/all")
@@ -50,28 +44,7 @@ public class Dashboard {
 		return Response.ok(RapportDAO.getAllRapport()).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
-	@GET
-	@Path("/en_service")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getEnServiceAutomate() {
-		return Response.ok(AutomateDAO.getEnServiceAutomate()).header("Access-Control-Allow-Origin", "*").build();
-	}
 	
-	@GET
-	@Path("/a_reapprovisionner")
-	@Produces(MediaType.APPLICATION_JSON)
-		public Response getAReapprovisionnerAutomate() {
-			return Response.ok(AutomateDAO.getAReapprovisionnerAutomate()).header("Access-Control-Allow-Origin", "*").build();
-		}
-	
-
-
-	@GET
-	@Path("/ventes")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getVentes() {
-		return Response.ok(AutomateDAO.getVentesAutomate()).header("Access-Control-Allow-Origin", "*").build();
-	}
 	
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})

@@ -80,6 +80,7 @@ public class GestionAutomate extends HttpServlet {
 		 else {
 			Automate automate = new Automate();
 			automate.setNum_serie(request.getParameter("num_serie"));
+			automate.setType(request.getParameter("type"));
 			automate.setAdresse_instal(request.getParameter("adresse_instal"));
 			automate.setEmplacement(request.getParameter("emplacement"));
 			automate.setLatitude(request.getParameter("longitude"));
@@ -100,6 +101,7 @@ public class GestionAutomate extends HttpServlet {
 		 	Automate automate = AutomateDAO.getAutomate(id);
 			automate.setNum_serie(automate.getNum_serie());
 			automate.setAdresse_instal(automate.getAdresse_instal());
+			automate.setType(request.getParameter("type"));
 			automate.setEmplacement(automate.getEmplacement());
 			automate.setLatitude(automate.getLatitude());
 			automate.setLongitude(automate.getLongitude());
@@ -116,6 +118,7 @@ public class GestionAutomate extends HttpServlet {
 			automate.setNum_serie(request.getParameter("num_serie"));
 			automate.setAdresse_instal(request.getParameter("adresse_instal"));
 			automate.setEmplacement(request.getParameter("emplacement"));
+			automate.setType(request.getParameter("type"));
 			automate.setLatitude(request.getParameter("longitude"));
 			automate.setLongitude(request.getParameter("latitude"));
 			automate.setDate_intervention(request.getParameter("date_intervention"));

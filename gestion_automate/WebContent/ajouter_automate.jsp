@@ -56,6 +56,14 @@
                 </td>
             </tr>
             <tr>
+                <th>Type : </th>
+                <td>
+                 <input type="text" name="type" size="45"
+                   value="<c:out value='${automate.type}' />"
+                 />
+                </td>
+            </tr>
+            <tr>
                 <th>Emplacement : </th>
                 <td>
                  <input type="text" name="emplacement" size="30"

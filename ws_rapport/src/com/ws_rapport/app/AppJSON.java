@@ -27,24 +27,6 @@ import com.ws_rapport.entite.*;
 @Path("/rapportJSON")
 public class AppJSON {
  
-	@GET
-	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
-	public Response getJSONRappport(@PathParam("id") int id) {
-		Rapport rapport = RapportDAO.getRapport(id);
-	    return Response.ok(rapport).build();
-	}
-	
-	@GET
-	@Path("/all")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllJSONRappport() {
-		return Response.ok(RapportDAO.getAllRapport()).build();
-	}
-	
-	
-
 	
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})

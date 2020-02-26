@@ -22,6 +22,7 @@
             <tr>
                 <th>ID</th>
                 <th>Numero de serie</th>
+                <th>Type </th>
                 <th>Adresse d'installation</th>
                 <th>Emplacement</th>
                 <th>Latitude</th>
@@ -33,6 +34,7 @@
                 <tr>
                     <td><c:out value="${automate.id}" /></td>
                     <td><c:out value="${automate.num_serie}" /></td>
+                    <td><c:out value="${automate.type}" /></td>
                     <td><c:out value="${automate.adresse_instal}" /></td>
                     <td><c:out value="${automate.emplacement}" /></td>
                     <td><c:out value="${automate.latitude}" /></td>

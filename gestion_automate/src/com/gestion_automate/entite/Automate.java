@@ -17,6 +17,9 @@ public class Automate {
 		@Column(name = "id")
 		private int id;
 		
+		@Column(name = "type")
+		private String type;
+
 		@Column(name = "num_serie")
 		private String num_serie;
 		
@@ -37,6 +40,8 @@ public class Automate {
 		
 		@Column(name = "commentaire")
 		private String commentaire;
+
+		
 	
 
 		public Automate() {
@@ -103,6 +108,14 @@ public class Automate {
 		public String toString() {
 			return "Automate [id=" + id + ", num_serie=" + num_serie + ", adresse_instal=" + adresse_instal
 					+ ", emplacement=" + emplacement + "]";
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 		
 		
