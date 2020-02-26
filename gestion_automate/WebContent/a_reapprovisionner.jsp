@@ -10,10 +10,10 @@
  <center>
   <h1>Rapport des automtes</h1>
         <h2>
-         <a href="en_service">En service</a>
-         <a href="hors_service">Hors service </a>
-         <a href="a_reapprovisionner">A reapprovisionner </a>
-         <a href="ventes">Ventes</a>
+         <a href="en_service" style="margin-right:10px"> En service </a>
+         <a href="hors_service" style="margin-right:10px"> Hors service </a>
+         <a href="a_reapprovisionner" style="margin-right:10px"> A reapprovisionner </a>
+         <a href="ventes" style="margin-right:10px"> Ventes </a>
         </h2>
  </center>
     <div align="center">
